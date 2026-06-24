@@ -20,6 +20,7 @@ def main():
 
     print(f"{ctime()} | [Main PID: {main_pid}] [Main TID: {main_tid}] === เริ่มระบบจำลองตู้กาแฟแบบ Multi-Thread ===")
     start_time = time() # บันทึกเวลาที่เริ่มทำงาน
+    
     threads = [] # สร้างลิสต์เก็บ Thread ที่สร้างขึ้น
     # ลูปสร้าง Thread สำหรับลูกค้าแต่ละคนในคิว
 
