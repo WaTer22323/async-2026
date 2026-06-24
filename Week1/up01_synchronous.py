@@ -1,39 +1,28 @@
-import threading
 from time import sleep, ctime, time
-import os
 
 def update_cup_number(customer_name):
-    pid = os.getpid() # ดึง PID ของ Process ปัจจุบัน
-    thread_id = threading.current_thread().native_id # ดึง Thread ID ของ Thread ปัจจุบัน
-    thread_name = threading.current_thread().name # ดึงชื่อ Thread ปัจจุบัน
-
-    pass
+    print(f"{ctime()} | LCD: Processing for customer {customer_name}...")
+    sleep(1)
+    print(f"{ctime()} | LCD: Done for customer {customer_name}.")
 
 def make_coffee(customer_name):
-    pid = os.getpid()
-    thread_id = threading.current_thread().native_id #  ดึง Thread ID ของ Thread ปัจจุบัน
-    thread_name = threading.current_thread().name # ดึงชื่อ Thread ปัจจุบัน
+    print(f"{ctime()} | Making coffee for {customer_name}...")
+    sleep(1)
+    print(f"{ctime()} | Coffee ready for {customer_name}!")
 
-    print(f"{ctime()} | [PID: {pid}] [TID: {thread_id}] [Thread Name: {thread_name}] กำลังชงกาแฟให้ ลูกค้า {customer_name}...") 
-    sleep(1)  # บล็อกการทำงานของ Thread นี้ไว้ 1 วินาที
-    print(f"{ctime()} | [PID: {pid}] [TID: {thread_id}] [Thread Name: {thread_name}] ลูกค้า {customer_name}: ได้รับกาแฟแล้ว!")
-    pass
+    update_cup_number(customer_name)
 
 def main():
-    queue = ['A', 'B', 'C'] # ลิสต์ลูกค้าที่เข้ามาในคิว (ทีละคน)
-    main_pid = os.getpid() # ดึง PID ของ Process หลัก
-    main_tid = threading.current_thread().native_id # ดึง Thread ID ของ Thread หลัก
+    queue = ['A', 'B', 'C']
 
-    print(f"{ctime()} | [Main PID: {main_pid}] [Main TID: {main_tid}] === เริ่มระบบจำลองตู้กาแฟแบบ Synchronous ===")
-    start_time = time() # บันทึกเวลาที่เริ่มทำงาน
+    print(f"{ctime()} | === Synchronous Coffee Machine ===")
+    start_time = time()
 
-    # ลูปทำงานตามลำดับคิวเดียว (ทีละคน)
     for customer in queue:
         make_coffee(customer)
 
     duration = time() - start_time
-    print(f"{ctime()} | ใช้เวลารวมทั้งหมด: {duration:0.2f} วินาที")
-    pass
+    print(f"{ctime()} | Total time: {duration:0.2f} seconds")
 
 if __name__ == "__main__":
     main()
