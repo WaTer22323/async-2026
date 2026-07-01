@@ -2,7 +2,7 @@ import asyncio
 import multiprocessing
 from time import ctime, sleep, time
 
-def greet_dinners(customer):
+def greet_dinner(customer):
     print(f"{ctime()} Greeting for Customer-{customer} ...")
     sleep(1)  # Simulate a delay in greeting
     print(f"{ctime()} Greeting for Customer-{customer} ...Done!")

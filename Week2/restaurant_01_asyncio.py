@@ -2,8 +2,6 @@ from time import ctime, time
 import asyncio
 
 
-
-
 async def greet_diners(customer):
     print(f"{ctime()} Greeting for Customer-{customer} ...")
     await asyncio.sleep(1)  # non-blocking delay (was: sleep(1))
