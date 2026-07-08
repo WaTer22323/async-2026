@@ -11,7 +11,7 @@ async def main():
     try:
         print(f"{ctime()} Main: Enforcing a strict 2-second timeout deadline...")
         # 
-        result = await asyncio.wait_for(long_query_simulation(), timeout=2.0)
+        result = await asyncio.wait_for(long_query_simulation(), timeout=3.0)
         print(f"{ctime()} Result acquired: {result}")
     except asyncio.TimeoutError:
         # 

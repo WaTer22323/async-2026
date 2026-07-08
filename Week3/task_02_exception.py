@@ -4,13 +4,13 @@ from time import ctime
 
 async def division_worker(a, b):
     await asyncio.sleep(0.5)
-    return a / b # 
+    return a / b # will raise a ZeroDivisionError when b == 0
 
 async def main():
     task_success = asyncio.create_task(division_worker(10, 2))
     task_fail = asyncio.create_task(division_worker(10, 0))
 
-    # 
+    #    
     await asyncio.sleep(1)
     
     # 
