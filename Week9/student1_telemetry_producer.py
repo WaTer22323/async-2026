@@ -5,9 +5,9 @@ import json
 import redis.asyncio as redis
 
 # ⚙️ CONFIGURATION
-REDIS_HOST = 'localhost'     # IP ของ Redis Server (เครื่องครู)
+REDIS_HOST = '172.20.56.236'     # IP ของ Redis Server (เครื่องครู)
 GROUP_ID = 'g01'             # เลขกลุ่ม เช่น g01 - g08
-STUDENT_ID = '66010001'      # รหัสนักศึกษาตนเอง
+STUDENT_ID = '6720301004'      # รหัสนักศึกษาตนเอง
 
 STREAM_KEY = f"f1:telemetry:{GROUP_ID}"
 FINISH_DISTANCE = 10000.0    # 10,000 เมตร (10 km)

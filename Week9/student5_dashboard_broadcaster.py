@@ -3,9 +3,9 @@ import json
 import redis.asyncio as redis
 
 # ⚙️ CONFIGURATION
-REDIS_HOST = 'localhost'
-GROUP_ID = 'g01'
-STUDENT_ID = '66010005'
+REDIS_HOST = '172.16.2.117'     # IP ของ Redis Server (เครื่องครู)
+GROUP_ID = 'g01'             # เลขกลุ่ม เช่น g01 - g08
+STUDENT_ID = '6720301004'      # รหัสนักศึกษาตนเอง
 
 STREAM_KEY = f"f1:telemetry:{GROUP_ID}"
 GROUP_NAME = "f1_pitwall"
